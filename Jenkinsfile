@@ -8,7 +8,7 @@ pipeline{
         }
         stage("Build Maven Project"){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhm07/SeleniumWithCucucumber']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhm07/SeleniumWithCucucumber']]])
                 sh 'mvn clean install'
             }
         }
