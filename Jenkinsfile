@@ -8,7 +8,7 @@ pipeline{
         }
         stage("Build Maven Project"){
             steps{
-                sh 'mvn -Dplugin=install help:describe'
+                bat 'mvn -Dplugin=install help:describe'
             }
         }
         stage("Create Report"){
@@ -18,7 +18,7 @@ pipeline{
         }
         stage("Build docker Image"){
             steps{
-                sh 'docker built -t shubhm07/SeleniumWithCucucumber .'
+                bat 'docker built -t shubhm07/SeleniumWithCucucumber .'
             }
         }
     }
