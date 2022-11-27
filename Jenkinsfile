@@ -8,7 +8,8 @@ pipeline{
         }
         stage("Build Maven Project"){
             steps{
-                bat 'mvn -Dplugin=install help:describe'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhm07/SeleniumWithCucucumber']]])
+                sh 'mvn clean install'
             }
         }
         stage("Create Report"){
